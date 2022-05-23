@@ -1,6 +1,9 @@
 import speech_recognition as sr
 
 class Sttengine:
+    '''
+    Speech-to-text conversion
+    '''
 
     def __init__(self) -> None:
         pass
@@ -9,6 +12,11 @@ class Sttengine:
     def recordAudiotoString():
         """
         convert audio to string
+
+        Returns
+        ----------
+        string
+            text output
         """
 
         r = sr.Recognizer()
@@ -29,8 +37,19 @@ class Sttengine:
         return text
         
 
-    def invokeWord():
-        word = 'Holmes'
+    def invokeWord(word):
+        """
+        special word for invocation
+
+        Parameters
+        ----------
+        word
+            input word
+        Returns
+        ----------
+        string
+            text output
+        """
 
         data = recordAudiotoString() 
 
