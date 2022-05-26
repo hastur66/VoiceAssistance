@@ -14,9 +14,15 @@ def wiki(text):
 def select_source(text):
     utter = sttengine.Sttengine.invokeWord(text)
 
-    if utter == 'google':
+    if utter[0] == 'google':
         google(text)
-    elif utter == 'wikipedia':
+    elif utter[0] == 'wikipedia':
         wiki(text)
     else:
         pass
+
+def main():
+    pass
+
+if __name__=='__main__':
+    main()
