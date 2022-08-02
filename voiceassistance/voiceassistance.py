@@ -15,14 +15,21 @@ def select_source(text):
     utter = sttengine.Sttengine.invokeWord(text)
 
     if utter[0] == 'google':
-        google(text)
+        output = google(text)
     elif utter[0] == 'wikipedia':
-        wiki(text)
+        output = wiki(text)
     else:
         pass
 
+    return output
+
+def speak_output(text):
+    output = select_source(text)
+    voice = ttsengine.TTSengine.response(output)
+    return voice
+
 def main():
-    pass
+    return speak_output(text)
 
 if __name__=='__main__':
     main()
